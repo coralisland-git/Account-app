@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<!-- BEGIN PAGE LEVEL STYLES -->
+<link href="{% static 'pages/css/pricing.min.css' %}" rel="stylesheet" type="text/css" />
+<!-- END PAGE LEVEL STYLES -->
+{% endblock %}
+
+
+{% block content %}
+<!-- BEGIN PAGE CONTENT INNER -->
+    <div class="page-content-inner">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="portlet light " id="form_wizard_1">
+                    <div class="portlet-title">
+                        <div class="caption">
+                        <i class=" icon-layers font-red"></i>
+                        <span class="caption-subject font-red bold uppercase"> Welcome 
+                        </span>
+                            </div>
+                    </div>
+                    <div class="portlet-body form">
+                       <p> First Name : {{ request.session.user.firstname }}</p>
+                       <p> Last Name : {{ request.session.user.lastname }}</p>
+                       <p>  User Name :  {{ request.session.user.username }}</p>
+                       <p> User Email : {{ request.session.user.email }}</p>
+                       <p> Phone Number : {{ request.session.user.phone }}</p>
+                       <p> Address : {{ request.session.user.address }}</p>
+                    </div>
+                </div>   
+            </div>  
+        </div>
+    </div>      
+    <!-- END PAGE CONTENT INNER -->
+{% endblock %}
+{% block extra_js %}
+<script src="https://checkout.stripe.com/checkout.js"></script>
+{% endblock %}
